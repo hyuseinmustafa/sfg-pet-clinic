@@ -1,6 +1,6 @@
 package com.hyuseinmustafa.sfgpetclinic.model;
 
-public class Spetiality extends BaseEntity {
+public class Speciality extends BaseEntity {
     private String description;
 
     public String getDescription() {
