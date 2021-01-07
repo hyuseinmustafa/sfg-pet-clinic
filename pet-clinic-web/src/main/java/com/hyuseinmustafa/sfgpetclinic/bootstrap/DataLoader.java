@@ -1,10 +1,7 @@
 package com.hyuseinmustafa.sfgpetclinic.bootstrap;
 
 import com.hyuseinmustafa.sfgpetclinic.model.*;
-import com.hyuseinmustafa.sfgpetclinic.services.OwnerService;
-import com.hyuseinmustafa.sfgpetclinic.services.PetTypeService;
-import com.hyuseinmustafa.sfgpetclinic.services.SpecialityService;
-import com.hyuseinmustafa.sfgpetclinic.services.VetService;
+import com.hyuseinmustafa.sfgpetclinic.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -16,12 +13,14 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialityService specialityService;
+    private final VisitService visitService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialityService specialityService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialityService specialityService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialityService = specialityService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -83,6 +82,14 @@ public class DataLoader implements CommandLineRunner {
         ownerService.save(owner);
 
         System.out.println("Owners Loaded ...");
+
+        Visit visit = new Visit();
+        visit.setPet(pet);
+        visit.setDate(LocalDate.now());
+        visit.setDescription("Sneezy Kitty");
+        visitService.save(visit);
+
+        System.out.println("Visit Loaded for pet: " + pet.getName() + " ...");
 
         Vet vet = new Vet();
         vet.setFirstName("Sam");
