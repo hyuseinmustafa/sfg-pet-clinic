@@ -1,6 +1,9 @@
-package com.hyuseinmustafa.sfgpetclinic.services.map;
+package sfgpetclinic.services.map;
 
 import com.hyuseinmustafa.sfgpetclinic.model.Owner;
+import com.hyuseinmustafa.sfgpetclinic.services.map.OwnerMapService;
+import com.hyuseinmustafa.sfgpetclinic.services.map.PetMapService;
+import com.hyuseinmustafa.sfgpetclinic.services.map.PetTypeMapService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

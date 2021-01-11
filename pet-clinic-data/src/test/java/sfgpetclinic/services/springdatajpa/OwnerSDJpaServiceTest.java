@@ -1,9 +1,10 @@
-package com.hyuseinmustafa.sfgpetclinic.services.springdatajpa;
+package sfgpetclinic.services.springdatajpa;
 
 import com.hyuseinmustafa.sfgpetclinic.model.Owner;
 import com.hyuseinmustafa.sfgpetclinic.repositories.OwnerRepository;
 import com.hyuseinmustafa.sfgpetclinic.repositories.PetRepository;
 import com.hyuseinmustafa.sfgpetclinic.repositories.PetTypeRepository;
+import com.hyuseinmustafa.sfgpetclinic.services.springdatajpa.OwnerSDJpaService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
