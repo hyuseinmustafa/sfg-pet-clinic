@@ -32,7 +32,7 @@ public class OwnerController {
     public String processFindForm(Owner owner, BindingResult result, Model model){
         if (owner.getLastName() == null) owner.setLastName("");
 
-        List<Owner> ownerList = ownerService.findAllByLastNameLike(owner.getLastName());
+        List<Owner> ownerList = ownerService.findAllByLastNameLike("%" + owner.getLastName() + "%");
         if(ownerList.isEmpty()){
             result.rejectValue("lastName", "notFound", "not found");
             return "owners/findOwners";
@@ -41,7 +41,7 @@ public class OwnerController {
             return "redirect:/owners/" + owner.getId();
         }else {
             model.addAttribute("selections", ownerList);
-            return "owners/ownerList";
+            return "owners/ownersList";
         }
     }
 
