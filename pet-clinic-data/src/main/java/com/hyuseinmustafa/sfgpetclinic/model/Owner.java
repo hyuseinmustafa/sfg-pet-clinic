@@ -1,6 +1,8 @@
 package com.hyuseinmustafa.sfgpetclinic.model;
 
+import com.hyuseinmustafa.sfgpetclinic.ValidPhoneNumber;
 import lombok.*;
+import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 import java.util.HashSet;
